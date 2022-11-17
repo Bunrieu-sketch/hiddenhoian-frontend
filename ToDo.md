@@ -1,0 +1,19 @@
+- [x] Set up global css
+- [x] create the footer
+- [x] create the about section for homepage
+- [x] create about page and make it dynamic
+- [x] create contact page and make it dynamic too
+- [ ] create navbar
+- [ ] create sidebar
+- [x] create homepage sections
+- [ ] create single blog page
+- [ ] create all categories page
+- [ ] create blogs page for specific category
+- [x] check what's book now for small screen
+- [ ] make nav search work
+- [x] create hero section
+- [ ] Update SeoConfig file
+- [ ] make contact form work
+- [ ] discuss map section on homepage
+- [ ] make fixed nav for homepage above about section
+- [ ] clear comments and console logs
