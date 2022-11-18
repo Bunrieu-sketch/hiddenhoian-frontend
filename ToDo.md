@@ -7,8 +7,8 @@
 - [ ] create sidebar
 - [x] create homepage sections
 - [ ] create single blog page
-- [ ] create all categories page
-- [ ] create blogs page for specific category
+- [x] create BlogsByCategory page
+- [ ] create other categories section for above page
 - [x] check what's book now for small screen
 - [ ] make nav search work
 - [x] create hero section

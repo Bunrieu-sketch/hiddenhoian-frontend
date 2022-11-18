@@ -17,7 +17,7 @@ const SleepLarge = ({ attributes: blog }) => {
           />
           <div className="info">
             <h4>{blog?.title}</h4>
-            <p>{blog?.shortDescription.substr(0, 150)}...</p>
+            <p>{blog?.shortDescription.substr(0, 110)}...</p>
             <span>
               read more <FaAngleDoubleRight />
             </span>

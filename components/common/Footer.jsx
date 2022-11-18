@@ -7,7 +7,9 @@ const Footer = () => {
   const [footerData, setFooterData] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/footer?populate=*`)
+    fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/footer?populate[0]=socialLinks.icon&populate[1]=pageLinks&populate[2]=logo&populate=*`
+    )
       .then((res) => res.json())
       .then((data) => setFooterData(data?.data?.attributes));
   }, []);
@@ -39,6 +41,19 @@ const Footer = () => {
         </article>
 
         <div className="text">
+          <div className="icons">
+            {footerData?.socialLinks?.map((link) => (
+              <a href={link?.url} target={'_blank'}>
+                <Image
+                  src={link?.icon?.data?.attributes?.url}
+                  alt="icon"
+                  width={20}
+                  height={20}
+                  objectFit="contain"
+                />
+              </a>
+            ))}
+          </div>
           <p>{footerData?.footerText}</p>
         </div>
       </div>
@@ -67,15 +82,28 @@ export const Container = styled.footer`
 
   a {
     color: #ffffff;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .section-center {
     padding: 20px 0;
   }
 
-  .text p {
-    text-align: center;
-    margin: 2.5rem auto 0;
+  .text {
+    .icons {
+      margin: 1rem 0 0.5rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    p {
+      text-align: center;
+      margin: 0 auto;
+    }
   }
 `;
 

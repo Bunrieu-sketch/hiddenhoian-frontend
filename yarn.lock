@@ -2420,6 +2420,11 @@
     "unist-util-is" "^5.0.0"
     "unist-util-visit-parents" "^5.1.1"
 
+"unslugify@^1.0.2":
+  "integrity" "sha512-BgxXV5mZCqydTEQzNqUPilmwvFW2v/CIHqcl7xLVNjLPpR0lOs0yuHbQs76JT2v/7M88rWG5Jn7CKNCQBd00uA=="
+  "resolved" "https://registry.npmjs.org/unslugify/-/unslugify-1.0.2.tgz"
+  "version" "1.0.2"
+
 "uri-js@^4.2.2":
   "integrity" "sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg=="
   "resolved" "https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz"

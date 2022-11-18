@@ -10,7 +10,7 @@ const SectionTitle = ({ title, description }) => {
         <h2>{title}</h2>
         <h4>
           <Link
-            href={`category/${slugify(title, {
+            href={`/category/${slugify(title, {
               lower: true,
             })}`}
           >

@@ -34,6 +34,7 @@ const Hero = ({ latestBlogs: blogs }) => {
         renderButtonGroupOutside={true}
         removeArrowOnDeviceType={['tablet', 'mobile']}
         keyBoardControl={true}
+        infinite={true}
       >
         {blogs?.map((b) => {
           const blog = b?.attributes;
