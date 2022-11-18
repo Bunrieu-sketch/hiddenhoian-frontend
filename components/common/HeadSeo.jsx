@@ -7,7 +7,7 @@ const HeadSeo = (props) => {
 
   const seo = {
     title: props.title
-      ? seoConfig.title + ' - ' + props.title
+      ? props.title + ' - ' + seoConfig.title
       : seoConfig.title,
     description: props.description || seoConfig.description,
     url: `${seoConfig.url}${asPath}`,

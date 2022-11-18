@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
           <div className="links">
             {footerData?.pageLinks?.map((link) => (
-              <Link href={link?.linkUrl} key={link?.id}>
+              <Link href={`/${link?.linkUrl}`} key={link?.id}>
                 <a>{link?.linkText}</a>
               </Link>
             ))}

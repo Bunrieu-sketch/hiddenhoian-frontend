@@ -5,18 +5,45 @@ import {
   FeaturedArticles,
   Header,
 } from '../../components/blogsByCategory';
+import { HeadSeo } from '../../components/common';
+import { useRouter } from 'next/router';
 
 const BlogsByCategory = ({ blogs, titlesData }) => {
+  const { query } = useRouter();
+
+  const {
+    eatDescription,
+    travelDescription,
+    sleepDescription,
+    seeAndDoDescription,
+    generalDescription,
+  } = titlesData?.attributes;
+
+  const descriptions = {
+    eat: eatDescription,
+    travel: travelDescription,
+    sleep: sleepDescription,
+    'see-and-do': seeAndDoDescription,
+    general: generalDescription,
+  };
+
   return (
-    <Container className="section">
-      <div className="section-center">
-        <Header titlesData={titlesData} />
-        <main>
-          <FeaturedArticles blogs={blogs?.slice(0, 3)} />
-          <AllArticles blogs={blogs?.slice(3)} />
-        </main>
-      </div>
-    </Container>
+    <>
+      <HeadSeo
+        title={unslugify(query.category)}
+        description={descriptions[query.category] || ''}
+      />
+
+      <Container className="section">
+        <div className="section-center">
+          <Header titlesData={titlesData} />
+          <main>
+            <FeaturedArticles blogs={blogs?.slice(0, 3)} />
+            <AllArticles blogs={blogs?.slice(3)} />
+          </main>
+        </div>
+      </Container>
+    </>
   );
 };
 

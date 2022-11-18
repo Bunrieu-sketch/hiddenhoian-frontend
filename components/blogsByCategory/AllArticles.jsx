@@ -3,6 +3,8 @@ import BlogCard from './BlogCard';
 import SectionTitle from './SectionTitle';
 
 const AllArticles = ({ blogs }) => {
+  if (blogs?.length === 0) return null;
+
   return (
     <Container>
       <SectionTitle title="all articles" />

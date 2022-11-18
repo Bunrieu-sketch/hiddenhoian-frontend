@@ -1,8 +1,8 @@
 export default {
-  title: `DaoLens`,
-  description: `Make your new joiners ready to contribute in minutes`,
-  url: `https://daolens.com`,
-  imageUrl: '/assets/social-card.png',
-  imageAlt: `DAO Lens`,
-  siteName: `DAO Lens`,
+  title: `Hidden Hoian`,
+  description: `Hidden Hoi An is the most comprehensive site for up-to-date guides, reviews and 'Hidden' knowledge about Hoi An, Vietnam.`,
+  url: `https://hiddenhoian.com`,
+  imageUrl: '/capture.png',
+  imageAlt: `Hidden Hoian`,
+  siteName: `Hidden Hoian`,
 };

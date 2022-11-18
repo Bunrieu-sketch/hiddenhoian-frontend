@@ -1,4 +1,5 @@
 import { unslugify } from 'unslugify';
+import { HeadSeo } from '../../components/common';
 import {
   Content,
   GoToTop,
@@ -11,6 +12,12 @@ import {
 const SingleBlogPage = ({ blog, featuredBlogs, recentBlogs }) => {
   return (
     <>
+      <HeadSeo
+        title={blog?.title}
+        description={blog?.shortDescription}
+        imageUrl={`${blog?.image?.data?.attributes?.url}`}
+      />
+
       <Header blog={blog} />
       <main>
         <Content blog={blog} />

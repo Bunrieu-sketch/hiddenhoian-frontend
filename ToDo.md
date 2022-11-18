@@ -3,17 +3,17 @@
 - [x] create the about section for homepage
 - [x] create about page and make it dynamic
 - [x] create contact page and make it dynamic too
-- [ ] create navbar
-- [ ] create sidebar
 - [x] create homepage sections
 - [x] create single blog page
 - [x] create BlogsByCategory page
-- [ ] create other categories section for above page
 - [x] check what's book now for small screen
-- [ ] make nav search work
 - [x] create hero section
-- [ ] Update SeoConfig file
+- [x] Update SeoConfig file
+- [x] clear comments and console logs
+- [ ] create navbar
+- [ ] create sidebar
 - [ ] make contact form work
 - [ ] discuss map section on homepage
 - [ ] make fixed nav for homepage above about section
-- [ ] clear comments and console logs
+- [ ] make nav search work
+- [ ] create other categories section for above page

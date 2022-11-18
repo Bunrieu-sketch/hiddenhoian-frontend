@@ -1,3 +1,4 @@
+import { HeadSeo } from '../components/common';
 import {
   Hero,
   About,
@@ -30,6 +31,7 @@ export default function Home({
 
   return (
     <>
+      <HeadSeo title="Homepage" />
       <Hero latestBlogs={latestBlogs} />
       <main>
         <About aboutTitle={aboutTitle} aboutText={aboutText} />

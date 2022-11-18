@@ -20,6 +20,8 @@ const FeaturedBlogs = ({ blogs }) => {
     };
   }, [isMobile]);
 
+  if (blogs?.length === 0) return null;
+
   return (
     <Container className="section-center">
       <h3>You might also like</h3>
@@ -53,7 +55,7 @@ const FeaturedBlogs = ({ blogs }) => {
 };
 
 export const Container = styled.section`
-  padding: 2rem 0;
+  padding-bottom: 2rem;
 
   h3 {
     text-align: center;

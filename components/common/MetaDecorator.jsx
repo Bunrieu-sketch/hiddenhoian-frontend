@@ -20,7 +20,7 @@ const MetaDecorator = (props) => {
       <meta property="twitter:description" content={props.description} />
       <meta property="twitter:image" content={props.imageUrl} />
       <meta name="twitter:image:alt" content={props.imageAlt} />
-      <meta property="twitter:creator" content="@DaoLens" />
+      <meta property="twitter:creator" content="@HiddenHoiAn" />
     </Head>
   );
 };

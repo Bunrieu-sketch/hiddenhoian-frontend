@@ -1,17 +1,22 @@
 import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
+import { HeadSeo } from '../components/common';
 
 const AboutPage = ({ data }) => {
   const { pageHeading, pageContent } = data.attributes;
   return (
-    <Container className="section">
-      <div className="section-center">
-        <h2>{pageHeading}</h2>
-        <div className="content">
-          <ReactMarkdown>{pageContent}</ReactMarkdown>
+    <>
+      <HeadSeo title={pageHeading} description={pageContent.substr(0, 200)} />
+
+      <Container className="section">
+        <div className="section-center">
+          <h2>{pageHeading}</h2>
+          <div className="content">
+            <ReactMarkdown>{pageContent}</ReactMarkdown>
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </>
   );
 };
 

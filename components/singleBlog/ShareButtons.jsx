@@ -47,7 +47,7 @@ const ShareButtons = () => {
 
 export const Container = styled.section`
   article {
-    margin-top: 2rem;
+    margin: 2rem 0;
     display: flex;
     gap: 2rem;
   }

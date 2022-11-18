@@ -17,6 +17,7 @@ export const Container = styled.section`
 
     p {
       margin: 1.5rem auto 0;
+      max-width: 42rem;
     }
   }
 `;
