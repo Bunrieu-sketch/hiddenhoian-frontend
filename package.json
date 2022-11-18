@@ -9,13 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "moment": "^2.29.4",
     "next": "^12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
     "react-markdown": "^8.0.3",
     "react-multi-carousel": "^2.8.2",
+    "react-share": "^4.4.1",
     "sass": "^1.56.1",
+    "showdown": "^2.1.0",
     "slugify": "^1.6.5",
     "styled-components": "^5.3.6",
     "unslugify": "^1.0.2"

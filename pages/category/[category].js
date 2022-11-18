@@ -60,8 +60,6 @@ export const getStaticPaths = async () => {
     params: { category },
   }));
 
-  console.log('paths', paths);
-
   return {
     paths,
     fallback: true,

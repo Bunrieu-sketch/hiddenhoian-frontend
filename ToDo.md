@@ -6,7 +6,7 @@
 - [ ] create navbar
 - [ ] create sidebar
 - [x] create homepage sections
-- [ ] create single blog page
+- [x] create single blog page
 - [x] create BlogsByCategory page
 - [ ] create other categories section for above page
 - [x] check what's book now for small screen

@@ -1,3 +1,4 @@
+import moment from 'moment/moment';
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
@@ -9,7 +10,8 @@ const General = ({ attributes: blog }) => {
         <a>
           <div className="img">
             <h5>
-              Posted on <span>{blog?.date}</span>
+              Posted on{' '}
+              <span>{moment(blog?.date).format('MMMM Do, YYYY')}</span>
             </h5>
             <Image
               src={blog?.image?.data?.attributes?.url}
@@ -59,6 +61,7 @@ export const Wrapper = styled.article`
 
       span {
         color: var(--clr-orange);
+        text-transform: capitalize;
       }
     }
   }

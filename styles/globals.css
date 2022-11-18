@@ -85,7 +85,7 @@ body {
 
 p {
   margin-bottom: 1.25rem;
-  max-width: 40em;
+  max-width: 40rem;
 }
 
 h1,
@@ -241,9 +241,6 @@ svg {
   width: 90vw;
   margin: 0 auto;
   max-width: var(--maxWidth);
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
