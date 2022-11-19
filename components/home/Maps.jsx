@@ -1,6 +1,6 @@
 const Maps = () => {
   return (
-    <section className="section">
+    <section id="maps" className="section">
       <h1>Maps</h1>
     </section>
   );

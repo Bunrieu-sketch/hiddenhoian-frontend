@@ -29,7 +29,7 @@ const General = ({ generalDescription, generalBlogs: blogs }) => {
   }, [isMobile]);
 
   return (
-    <Container className="section">
+    <Container id="general" className="section">
       <div className="section-center">
         <SectionTitle title="General" description={generalDescription} />
         {isMobile ? (

@@ -31,7 +31,7 @@ const Navbar = ({ toggleSidebar }) => {
   }, []);
 
   return (
-    <NavContainer>
+    <NavContainer id="header">
       <div className="section-center">
         <div className="nav-center">
           <button className="nav-toggle-btn" onClick={toggleSidebar}>

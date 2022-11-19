@@ -29,7 +29,7 @@ const Travel = ({ travelDescription, travelBlogs: blogs }) => {
   }, [isMobile]);
 
   return (
-    <Container className="section">
+    <Container id="travel" className="section">
       <div className="section-center">
         <SectionTitle title="Travel" description={travelDescription} />
         {isMobile ? (

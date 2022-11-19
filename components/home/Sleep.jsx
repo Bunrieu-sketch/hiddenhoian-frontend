@@ -29,7 +29,7 @@ const Sleep = ({ sleepDescription, sleepBlogs: blogs }) => {
   }, [isMobile]);
 
   return (
-    <Container className="section">
+    <Container id="sleep" className="section">
       <div className="section-center">
         <SectionTitle title="Sleep" description={sleepDescription} />
         {isMobile ? (

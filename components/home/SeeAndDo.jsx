@@ -29,7 +29,7 @@ const SeeAndDo = ({ seeAndDoDescription, seeAndDoBlogs: blogs }) => {
   }, [isMobile]);
 
   return (
-    <Container className="section">
+    <Container id="see&do" className="section">
       <div className="section-center">
         <SectionTitle title="See & Do" description={seeAndDoDescription} />
         {isMobile ? (

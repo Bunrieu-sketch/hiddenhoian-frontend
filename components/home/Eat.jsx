@@ -29,7 +29,7 @@ const Eat = ({ eatDescription, eatBlogs: blogs }) => {
   }, [isMobile]);
 
   return (
-    <Container className="section">
+    <Container id="eat" className="section">
       <div className="section-center">
         <SectionTitle title="Eat" description={eatDescription} />
         {isMobile ? (
