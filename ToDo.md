@@ -10,7 +10,7 @@
 - [x] create hero section
 - [x] Update SeoConfig file
 - [x] clear comments and console logs
-- [ ] create navbar
+- [x] create navbar
 - [ ] create sidebar
 - [ ] make contact form work
 - [ ] discuss map section on homepage

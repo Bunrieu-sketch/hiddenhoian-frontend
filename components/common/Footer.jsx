@@ -15,7 +15,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <Container>
+    <FooterContainer>
       <div className="section-center">
         <article className="header">
           <div className="logo">
@@ -57,11 +57,11 @@ const Footer = () => {
           <p>{footerData?.footerText}</p>
         </div>
       </div>
-    </Container>
+    </FooterContainer>
   );
 };
 
-export const Container = styled.footer`
+export const FooterContainer = styled.footer`
   background: #444;
   color: #ffffff;
   text-align: center;
