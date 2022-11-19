@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import styled from 'styled-components';
 import { HeadSeo } from '../components/common';
+import { ContactInfo, ContactForm } from '../components/contact';
 
 const ContactPage = ({ data }) => {
   const { pageHeading, pageImage, infoText, email, address } = data.attributes;
@@ -10,7 +10,7 @@ const ContactPage = ({ data }) => {
       <HeadSeo
         title={pageHeading}
         description={
-          'Contact Hidden Hoi An on the details below. Hidden Hoi An is dedicated to producing the best possible traveller resources.'
+          'Contact Hidden Hoi An on the details below. Hidden Hoi An is dedicated to producing the best possible traveler resources.'
         }
       />
       <Container className="section">
@@ -18,71 +18,14 @@ const ContactPage = ({ data }) => {
           <h1>{pageHeading}</h1>
 
           <div className="contact-center">
-            <article className="contact-form">
-              <form>
-                <h3>GET IN TOUCH</h3>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    className="form-control"
-                    placeholder="Name"
-                  />
-                </div>
+            <ContactForm />
 
-                <div className="form-group">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    className="form-control"
-                    placeholder="Email"
-                  />
-                </div>
-
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="subject"
-                    id="subject"
-                    className="form-control"
-                    placeholder="Subject"
-                  />
-                </div>
-
-                <div className="form-group">
-                  <textarea
-                    name="message"
-                    id="message"
-                    className="form-control"
-                    placeholder="Message"
-                  ></textarea>
-                </div>
-
-                <div className="form-group">
-                  <button type="submit" className="submit-btn btn">
-                    Send Message
-                  </button>
-                </div>
-              </form>
-            </article>
-
-            <article className="contact-info">
-              <Image
-                src={pageImage?.data?.attributes?.url}
-                alt="contact image"
-                width={965}
-                height={643}
-              />
-              <p>{infoText}</p>
-              <div className="details">
-                <h4>E-mail</h4>
-                <a href={`mailto:${email}`}>{email}</a>
-                <h4>Address</h4>
-                <p>{address}</p>
-              </div>
-            </article>
+            <ContactInfo
+              pageImage={pageImage}
+              infoText={infoText}
+              email={email}
+              address={address}
+            />
           </div>
         </div>
       </Container>
@@ -108,38 +51,6 @@ export const Container = styled.main`
       display: block;
       color: var(--clr-orange);
     }
-  }
-
-  .contact-form {
-    h3 {
-      margin-bottom: 1.5rem;
-    }
-  }
-
-  .form-group {
-    margin: 1.25rem 0;
-    .form-control {
-      background: #efefef;
-      border: 1px solid #e2e1e1;
-      padding: 0 10px;
-      display: block;
-      width: 100%;
-      line-height: 40px;
-      font-size: 1rem;
-
-      &::placeholder {
-        font-family: var(--bodyFont);
-      }
-    }
-
-    textarea {
-      resize: vertical;
-      height: 100px;
-    }
-  }
-
-  .submit-btn {
-    background: var(--clr-orange);
   }
 
   .contact-center {

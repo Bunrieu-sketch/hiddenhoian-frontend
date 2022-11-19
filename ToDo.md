@@ -12,7 +12,7 @@
 - [x] clear comments and console logs
 - [x] create navbar
 - [x] create sidebar
-- [ ] make contact form work
+- [x] make contact form work
 - [ ] discuss map section on homepage
 - [ ] make fixed nav for homepage above about section
 - [ ] make nav search work
