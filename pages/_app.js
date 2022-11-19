@@ -1,11 +1,19 @@
 import '../styles/globals.css';
 import 'react-multi-carousel/lib/styles.css';
-import { Footer, Navbar } from '../components/common';
+import { useState } from 'react';
+import { Footer, Navbar, Sidebar } from '../components/common';
 
 function MyApp({ Component, pageProps }) {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <>
-      <Navbar />
+      <Navbar toggleSidebar={toggleSidebar} />
+      <Sidebar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
       <Component {...pageProps} />
       <Footer />
     </>

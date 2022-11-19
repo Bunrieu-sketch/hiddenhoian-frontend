@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { FaBars, FaSearch } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 
-const Navbar = () => {
+const Navbar = ({ toggleSidebar }) => {
   const [navData, setNavData] = useState([]);
   const router = useRouter();
 
@@ -34,7 +34,7 @@ const Navbar = () => {
     <NavContainer>
       <div className="section-center">
         <div className="nav-center">
-          <button className="nav-toggle-btn">
+          <button className="nav-toggle-btn" onClick={toggleSidebar}>
             <FaBars />
           </button>
           <div className="nav-logo">

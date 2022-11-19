@@ -11,7 +11,7 @@
 - [x] Update SeoConfig file
 - [x] clear comments and console logs
 - [x] create navbar
-- [ ] create sidebar
+- [x] create sidebar
 - [ ] make contact form work
 - [ ] discuss map section on homepage
 - [ ] make fixed nav for homepage above about section
