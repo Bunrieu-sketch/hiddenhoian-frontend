@@ -65,7 +65,6 @@ export const Container = styled.section`
     display: block;
     white-space: pre;
     -webkit-overflow-scrolling: touch;
-    /* overflow-x: scroll; */
     padding: 1rem 1.5rem;
     border-radius: 0.5rem;
   }

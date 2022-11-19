@@ -75,7 +75,6 @@ html {
 }
 
 body {
-  /* background: var(--backgroundColor); */
   color: var(--textColor);
   font-family: var(--bodyFont);
   font-weight: 400;
@@ -98,7 +97,6 @@ h4 {
   font-weight: 700;
   line-height: 1.25;
   text-transform: capitalize;
-  /* letter-spacing: var(--letterSpacing); */
   color: #444;
 }
 
@@ -193,46 +191,6 @@ svg {
   font-size: 1rem;
 }
 
-.btn-fill {
-  background-color: var(--clr-red);
-}
-.btn-fill:hover {
-  background-color: transparent;
-}
-
-.btn-outline {
-  background-color: transparent;
-}
-.btn-outline:hover {
-  background-color: var(--clr-red);
-}
-
-.btn-round {
-  background-color: var(--clr-black2);
-  border-radius: 2rem;
-  padding: 0.75rem 1.5rem;
-  border-color: var(--clr-black2);
-}
-.btn-round:hover {
-  background-color: var(--clr-black);
-  opacity: 0.9;
-}
-
-.loading {
-  margin: 0 auto;
-  width: 5rem;
-  height: 5rem;
-  border: 4px solid var(--grey-4);
-  border-radius: 50%;
-  /* border-top-color: var(--primary-5); */
-  animation: loading 0.75s linear infinite;
-}
-@keyframes loading {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .section {
   padding: 4rem 0;
 }
@@ -243,10 +201,6 @@ svg {
   max-width: var(--maxWidth);
   margin-right: auto;
   margin-left: auto;
-}
-
-.page {
-  min-height: calc(100vh - 60px);
 }
 
 @media (min-width: 792px) {

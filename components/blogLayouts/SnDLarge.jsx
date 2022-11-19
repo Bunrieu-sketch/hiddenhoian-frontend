@@ -50,7 +50,6 @@ export const Wrapper = styled.article`
   }
 
   .info {
-    /* order: 1; */
     padding: 40px 30px;
     order: 1 h4 {
       margin-top: 0.25rem;
