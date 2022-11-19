@@ -191,6 +191,20 @@ svg {
   font-size: 1rem;
 }
 
+.loading {
+  margin: 0 auto;
+  width: 5rem;
+  height: 5rem;
+  border: 4px solid var(--grey-4);
+  border-radius: 50%;
+  animation: loading 0.75s linear infinite;
+}
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .section {
   padding: 4rem 0;
 }

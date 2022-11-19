@@ -43,7 +43,12 @@ const Footer = () => {
         <div className="text">
           <div className="icons">
             {footerData?.socialLinks?.map((link) => (
-              <a key={link?.id} href={link?.url} target={'_blank'}>
+              <a
+                key={link?.id}
+                href={link?.url}
+                target={'_blank'}
+                rel="noopener noreferrer"
+              >
                 <Image
                   src={link?.icon?.data?.attributes?.url}
                   alt="icon"

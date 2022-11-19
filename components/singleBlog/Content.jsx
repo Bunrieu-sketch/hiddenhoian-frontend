@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
-import Showdown from 'showdown';
 
 const Content = ({ blog }) => {
   return (

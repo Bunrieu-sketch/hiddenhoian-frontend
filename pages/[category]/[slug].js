@@ -1,5 +1,6 @@
 import { unslugify } from 'unslugify';
 import { HeadSeo } from '../../components/common';
+import { useRouter } from 'next/router';
 import {
   Content,
   GoToTop,
@@ -10,6 +11,22 @@ import {
 } from '../../components/singleBlog';
 
 const SingleBlogPage = ({ blog, featuredBlogs, recentBlogs }) => {
+  const { isFallback } = useRouter();
+
+  if (isFallback) {
+    return (
+      <>
+        <section className="section">
+          <div className="section-center">
+            <main>
+              <div className="loading"></div>
+            </main>
+          </div>
+        </section>
+      </>
+    );
+  }
+
   return (
     <>
       <HeadSeo
@@ -34,7 +51,7 @@ const SingleBlogPage = ({ blog, featuredBlogs, recentBlogs }) => {
 export default SingleBlogPage;
 
 export const getStaticProps = async (context) => {
-  const { category, slug } = context.params;
+  const { category, slug } = context?.params;
 
   const res = await fetch(
     `${

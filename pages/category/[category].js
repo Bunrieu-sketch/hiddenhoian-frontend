@@ -1,15 +1,29 @@
 import { unslugify } from 'unslugify';
 import styled from 'styled-components';
+import { HeadSeo } from '../../components/common';
+import { useRouter } from 'next/router';
 import {
   AllArticles,
   FeaturedArticles,
   Header,
 } from '../../components/blogsByCategory';
-import { HeadSeo } from '../../components/common';
-import { useRouter } from 'next/router';
 
 const BlogsByCategory = ({ blogs, titlesData }) => {
-  const { query } = useRouter();
+  const { query, isFallback } = useRouter();
+
+  if (isFallback) {
+    return (
+      <>
+        <Container className="section">
+          <div className="section-center">
+            <main>
+              <div className="loading"></div>
+            </main>
+          </div>
+        </Container>
+      </>
+    );
+  }
 
   const {
     eatDescription,
@@ -51,8 +65,8 @@ export const Container = styled.section``;
 
 export default BlogsByCategory;
 
-export const getStaticProps = async ({ params }) => {
-  const { category } = params;
+export const getStaticProps = async (context) => {
+  const { category } = context?.params;
 
   // page data
   const res = await fetch(
