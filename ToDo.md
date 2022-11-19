@@ -13,7 +13,7 @@
 - [x] create navbar
 - [x] create sidebar
 - [x] make contact form work
-- [ ] discuss map section on homepage
+- [x] discuss map section on homepage
 - [x] make fixed nav for homepage above about section
 - [ ] make nav search work
 - [ ] create other categories section for above page

@@ -27,6 +27,7 @@ export default function Home({
     sleepDescription,
     seeAndDoDescription,
     generalDescription,
+    maps,
   } = data?.attributes;
 
   return (
@@ -49,7 +50,7 @@ export default function Home({
           generalDescription={generalDescription}
           generalBlogs={generalBlogs}
         />
-        <Maps />
+        <Maps maps={maps} />
       </main>
     </>
   );
@@ -63,7 +64,9 @@ export async function getStaticProps() {
   const recentBlogsData = await recentBlogsRes.json();
 
   // page data
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/home-page`);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/home-page?populate=*`
+  );
   const data = await res.json();
 
   // blogs -> eat
