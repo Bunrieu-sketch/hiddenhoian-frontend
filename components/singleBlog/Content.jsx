@@ -5,7 +5,7 @@ const Content = ({ blog }) => {
   return (
     <Container className="section">
       <div className="section-center">
-        <div className="blog-center">
+        <div className="single-blog-center">
           <ReactMarkdown>{blog?.body}</ReactMarkdown>
         </div>
       </div>
@@ -17,7 +17,7 @@ export const Container = styled.section`
   padding: 3rem 0;
   font-family: var(--thirdFont);
 
-  .blog-center {
+  .single-blog-center {
     max-width: 45rem;
     margin-left: auto;
     margin-right: auto;

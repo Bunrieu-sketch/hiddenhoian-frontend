@@ -64,21 +64,29 @@ export const getStaticProps = async (context) => {
 
   // same category blogs
   const featuredRes = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/blogs?sort=createdAt:desc&pagination[limit]=3&filters[category][$eqi]=${category}&filters[slug][$ne]=${slug}&populate=*`
+    `${
+      process.env.NEXT_PUBLIC_API_URL
+    }/api/blogs?sort=createdAt:desc&pagination[limit]=3&filters[category][$eqi]=${unslugify(
+      category
+    )}&filters[slug][$ne]=${slug}&populate=*`
   );
   const featuredData = await featuredRes.json();
 
   // other category blogs
   const recentBlogsRes = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/blogs?sort=createdAt:desc&pagination[limit]=4&filters[category][$ne]=${category}&populate=*`
+    `${
+      process.env.NEXT_PUBLIC_API_URL
+    }/api/blogs?sort=createdAt:desc&pagination[limit]=4&filters[category][$ne]=${unslugify(
+      category
+    ).toLowerCase()}&populate=*`
   );
   const recentBlogsData = await recentBlogsRes.json();
 
   return {
     props: {
       blog: data?.data[0]?.attributes,
-      featuredBlogs: featuredData.data,
-      recentBlogs: recentBlogsData.data,
+      featuredBlogs: featuredData?.data,
+      recentBlogs: recentBlogsData?.data,
     },
   };
 };

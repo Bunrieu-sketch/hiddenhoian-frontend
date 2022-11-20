@@ -23,7 +23,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
                 <a>
                   <Image
                     src={sidebarData?.logo?.data?.attributes?.url}
-                    alt="logo"
+                    alt="HiddenHoiAn"
                     width={195}
                     height={50}
                     objectFit="contain"

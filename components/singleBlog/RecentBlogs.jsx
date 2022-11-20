@@ -40,7 +40,7 @@ const RecentBlogs = ({ blogs }) => {
                   height={400}
                 />
                 <div className="info">
-                  <small>{blog?.attributes?.slug}</small>
+                  <small>{blog?.attributes?.category}</small>
                   <h4>{blog?.attributes?.title}</h4>
                 </div>
               </a>

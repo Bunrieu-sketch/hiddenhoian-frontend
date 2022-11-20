@@ -23,7 +23,7 @@ const Footer = () => {
               <a>
                 <Image
                   src={footerData?.logo?.data?.attributes?.url}
-                  alt="logo"
+                  alt="HiddenHoiAn"
                   width={173}
                   height={50}
                   objectFit="contain"

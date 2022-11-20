@@ -30,11 +30,10 @@ const Maps = ({ maps }) => {
               src={activeMap?.mapLink}
               width="934"
               height="504"
-              frameborder="0"
               style={{ border: 0 }}
-              allowfullscreen=""
+              allowFullScreen=""
               aria-hidden="false"
-              tabindex="0"
+              tabIndex="0"
             ></iframe>
           </MapsContainer>
         </div>
