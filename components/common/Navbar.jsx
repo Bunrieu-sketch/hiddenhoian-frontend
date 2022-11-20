@@ -2,18 +2,30 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaBars, FaSearch } from 'react-icons/fa';
+import { FaBars, FaSearch, FaTimes } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 
 const Navbar = ({ toggleSidebar }) => {
-  const [navData, setNavData] = useState([]);
   const router = useRouter();
-
+  const [navData, setNavData] = useState([]);
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   const [isMobile, setIsMobile] = useState(false);
 
   const setDimension = () => {
     const ismobile = window.innerWidth < 1200;
     if (ismobile !== isMobile) setIsMobile(ismobile);
+  };
+
+  const toggleSearchBox = () => {
+    setShowSearch(!showSearch);
+  };
+
+  const onSearch = (e) => {
+    e.preventDefault();
+    router.push(`/search/${searchTerm}`);
+    setShowSearch(false);
+    setSearchTerm('');
   };
 
   useEffect(() => {
@@ -42,7 +54,7 @@ const Navbar = ({ toggleSidebar }) => {
               <a>
                 <Image
                   src={navData?.logo?.data?.attributes?.url}
-                  alt="logo"
+                  alt="HiddenHoiAn"
                   width={isMobile ? 130 : 173}
                   height={isMobile ? 38 : 50}
                   objectFit="contain"
@@ -63,16 +75,37 @@ const Navbar = ({ toggleSidebar }) => {
               </Link>
             ))}
           </div>
-          <div className="nav-search">
-            <FaSearch />
+          <div className="nav-search" onClick={toggleSearchBox}>
+            {showSearch ? <FaTimes style={{ color: 'red' }} /> : <FaSearch />}
           </div>
         </div>
+
+        <SearchBox>
+          <form
+            onSubmit={onSearch}
+            className={showSearch ? 'show-search' : null}
+          >
+            <input
+              type="search"
+              placeholder="Search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <button type="submit">Search</button>
+          </form>
+        </SearchBox>
       </div>
     </NavContainer>
   );
 };
 
 export const NavContainer = styled.nav`
+  background: var(--clr-white);
+
+  .section-center {
+    position: relative;
+  }
+
   .nav-center {
     padding: 10px 0;
     display: grid;
@@ -146,6 +179,71 @@ export const NavContainer = styled.nav`
   @media (min-width: 1200px) {
     .nav-center {
       grid-template-columns: 173px 1fr 173px;
+    }
+  }
+`;
+
+export const SearchBox = styled.aside`
+  position: absolute;
+  top: 11px;
+  background: #fff;
+  max-width: 300px;
+  right: 108px;
+
+  @media (min-width: 992px) {
+    top: 16px;
+  }
+  @media (min-width: 1200px) {
+    top: 22px;
+  }
+
+  form {
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form.show-search {
+    display: flex;
+  }
+
+  input {
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    width: 100%;
+    background: #fff;
+    border: 0;
+    border: 1px solid #707070;
+    padding: 0 15px;
+    font-weight: normal;
+    font-size: 1rem;
+
+    &::placeholder {
+      color: #707070;
+      font-family: var(--bodyFont);
+      font-size: 1rem;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    margin-left: 10px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    background: #707070;
+    color: #fff;
+    border: 1px solid #707070;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+
+    &:hover {
+      background: #444;
     }
   }
 `;

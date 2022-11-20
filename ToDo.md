@@ -15,5 +15,4 @@
 - [x] make contact form work
 - [x] discuss map section on homepage
 - [x] make fixed nav for homepage above about section
-- [ ] make nav search work
-- [ ] create other categories section for above page
+- [x] make nav search work
