@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Carousel from 'react-multi-carousel';
 import { SectionTitle } from '../common';
@@ -13,51 +12,33 @@ const Travel = ({ travelDescription, travelBlogs: blogs }) => {
     },
   };
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  const setDimension = () => {
-    const ismobile = window.innerWidth < 992;
-    if (ismobile !== isMobile) setIsMobile(ismobile);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', setDimension, false);
-
-    return () => {
-      window.removeEventListener('resize', setDimension);
-    };
-  }, [isMobile]);
-
   return (
     <Container id="travel" className="section">
       <div className="section-center">
         <SectionTitle title="Travel" description={travelDescription} />
-        {isMobile ? (
-          <>
-            <div className="blog-center">
-              <Carousel
-                showDots={true}
-                renderDotsOutside={true}
-                containerClass="carousel-container"
-                rewind={true}
-                responsive={responsive}
-                renderButtonGroupOutside={true}
-                removeArrowOnDeviceType={['tablet', 'mobile']}
-                keyBoardControl={true}
-              >
-                {blogs?.map((blog) => {
-                  return <TravelSmall key={blog?.id} {...blog} />;
-                })}
-              </Carousel>
-            </div>
-          </>
-        ) : (
-          <div className="blog-center-big">
-            {blogs?.slice(0, 4).map((blog) => {
-              return <TravelLarge key={blog?.id} {...blog} />;
+
+        <div className="blog-center">
+          <Carousel
+            showDots={true}
+            renderDotsOutside={true}
+            containerClass="carousel-container"
+            rewind={true}
+            responsive={responsive}
+            renderButtonGroupOutside={true}
+            removeArrowOnDeviceType={['tablet', 'mobile']}
+            keyBoardControl={true}
+          >
+            {blogs?.map((blog) => {
+              return <TravelSmall key={blog?.id} {...blog} />;
             })}
-          </div>
-        )}
+          </Carousel>
+        </div>
+
+        <div className="blog-center-big">
+          {blogs?.slice(0, 4).map((blog) => {
+            return <TravelLarge key={blog?.id} {...blog} />;
+          })}
+        </div>
       </div>
     </Container>
   );
@@ -65,7 +46,6 @@ const Travel = ({ travelDescription, travelBlogs: blogs }) => {
 
 export const Container = styled.section`
   .blog-center-big {
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
     transform: translateX(-20px);
   }

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Carousel from 'react-multi-carousel';
 import { SectionTitle } from '../common';
@@ -13,51 +12,33 @@ const SeeAndDo = ({ seeAndDoDescription, seeAndDoBlogs: blogs }) => {
     },
   };
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  const setDimension = () => {
-    const ismobile = window.innerWidth < 992;
-    if (ismobile !== isMobile) setIsMobile(ismobile);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', setDimension, false);
-
-    return () => {
-      window.removeEventListener('resize', setDimension);
-    };
-  }, [isMobile]);
-
   return (
     <Container id="see&do" className="section">
       <div className="section-center">
         <SectionTitle title="See & Do" description={seeAndDoDescription} />
-        {isMobile ? (
-          <>
-            <div className="blog-center">
-              <Carousel
-                showDots={true}
-                renderDotsOutside={true}
-                containerClass="carousel-container"
-                rewind={true}
-                responsive={responsive}
-                renderButtonGroupOutside={true}
-                removeArrowOnDeviceType={['tablet', 'mobile']}
-                keyBoardControl={true}
-              >
-                {blogs?.map((blog) => {
-                  return <SnDSmall key={blog?.id} {...blog} />;
-                })}
-              </Carousel>
-            </div>
-          </>
-        ) : (
-          <div className="blog-center-big">
+
+        <div className="blog-center">
+          <Carousel
+            showDots={true}
+            renderDotsOutside={true}
+            containerClass="carousel-container"
+            rewind={true}
+            responsive={responsive}
+            renderButtonGroupOutside={true}
+            removeArrowOnDeviceType={['tablet', 'mobile']}
+            keyBoardControl={true}
+          >
             {blogs?.map((blog) => {
-              return <SnDLarge key={blog?.id} {...blog} />;
+              return <SnDSmall key={blog?.id} {...blog} />;
             })}
-          </div>
-        )}
+          </Carousel>
+        </div>
+
+        <div className="blog-center-big">
+          {blogs?.map((blog) => {
+            return <SnDLarge key={blog?.id} {...blog} />;
+          })}
+        </div>
       </div>
     </Container>
   );
@@ -65,7 +46,6 @@ const SeeAndDo = ({ seeAndDoDescription, seeAndDoBlogs: blogs }) => {
 
 export const Container = styled.section`
   .blog-center-big {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Carousel from 'react-multi-carousel';
 import { SectionTitle } from '../common';
@@ -13,51 +12,33 @@ const Eat = ({ eatDescription, eatBlogs: blogs }) => {
     },
   };
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  const setDimension = () => {
-    const ismobile = window.innerWidth < 992;
-    if (ismobile !== isMobile) setIsMobile(ismobile);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', setDimension, false);
-
-    return () => {
-      window.removeEventListener('resize', setDimension);
-    };
-  }, [isMobile]);
-
   return (
     <Container id="eat" className="section">
       <div className="section-center">
         <SectionTitle title="Eat" description={eatDescription} />
-        {isMobile ? (
-          <>
-            <div className="blog-center">
-              <Carousel
-                showDots={true}
-                renderDotsOutside={true}
-                containerClass="carousel-container"
-                rewind={true}
-                responsive={responsive}
-                renderButtonGroupOutside={true}
-                removeArrowOnDeviceType={['tablet', 'mobile']}
-                keyBoardControl={true}
-              >
-                {blogs?.map((blog) => {
-                  return <EatSmall key={blog?.id} {...blog} />;
-                })}
-              </Carousel>
-            </div>
-          </>
-        ) : (
-          <div className="blog-center-big">
+
+        <div className="blog-center">
+          <Carousel
+            showDots={true}
+            renderDotsOutside={true}
+            containerClass="carousel-container"
+            rewind={true}
+            responsive={responsive}
+            renderButtonGroupOutside={true}
+            removeArrowOnDeviceType={['tablet', 'mobile']}
+            keyBoardControl={true}
+          >
             {blogs?.map((blog) => {
-              return <EatLarge key={blog?.id} {...blog} />;
+              return <EatSmall key={blog?.id} {...blog} />;
             })}
-          </div>
-        )}
+          </Carousel>
+        </div>
+
+        <div className="blog-center-big">
+          {blogs?.map((blog) => {
+            return <EatLarge key={blog?.id} {...blog} />;
+          })}
+        </div>
       </div>
     </Container>
   );
@@ -67,7 +48,6 @@ export const Container = styled.section`
   background-color: var(--clr-grey);
 
   .blog-center-big {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 1.75rem;

@@ -255,3 +255,19 @@ button {
     max-width: 1300px;
   }
 }
+
+/* layouts for home screen */
+.blog-center-big {
+  display: none;
+}
+.blog-center {
+  display: block;
+}
+@media (min-width: 992px) {
+  .blog-center {
+    display: none;
+  }
+  .blog-center-big {
+    display: grid;
+  }
+}
