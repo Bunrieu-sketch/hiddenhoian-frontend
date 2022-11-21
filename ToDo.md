@@ -16,3 +16,6 @@
 - [x] discuss map section on homepage
 - [x] make fixed nav for homepage above about section
 - [x] make nav search work
+- [x] hero image size increase
+- [x] message for no blogs found on the search page
+- [x] hide all articles on single blog page if nothing is found

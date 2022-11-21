@@ -244,6 +244,7 @@ button {
 @media (min-width: 992px) {
   .section-center {
     max-width: 960px;
+    padding: 0 15px;
   }
 }
 @media (min-width: 1200px) {

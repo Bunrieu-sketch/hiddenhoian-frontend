@@ -75,10 +75,10 @@ export const Container = styled.header`
 
   .carousel-container {
     width: 100%;
-    height: 50vh;
+    height: 70vh;
 
     @media (max-width: 768px) {
-      height: 40vh;
+      height: 50vh;
     }
   }
 

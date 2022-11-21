@@ -20,6 +20,8 @@ const RecentBlogs = ({ blogs }) => {
     };
   }, [isMobile]);
 
+  if (blogs?.length === 0) return null;
+
   return (
     <Container className="section-center">
       <h3>Recent Posts</h3>
@@ -53,7 +55,7 @@ const RecentBlogs = ({ blogs }) => {
 };
 
 export const Container = styled.section`
-  padding: 2rem 0;
+  padding: 2rem 15px;
 
   h3 {
     text-align: center;

@@ -112,7 +112,7 @@ export const Container = styled.section`
   ul {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    max-width: 1300px;
+    max-width: 1270px;
     margin: 0 auto;
 
     li {
