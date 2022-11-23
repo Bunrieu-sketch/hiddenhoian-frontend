@@ -59,7 +59,10 @@ const Footer = () => {
               </a>
             ))}
           </div>
-          <p>{footerData?.footerText}</p>
+          <p>
+            © Copyright {new Date().getFullYear()} by hiddenhoian. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </FooterContainer>

@@ -11,6 +11,9 @@ import {
 const BlogsByCategory = ({ blogs, titlesData }) => {
   const { query, isFallback } = useRouter();
 
+  const featuredBlogs = blogs?.filter((blog) => blog?.attributes?.featured);
+  const nonFeaturedBlogs = blogs?.filter((blog) => !blog?.attributes?.featured);
+
   if (isFallback) {
     return (
       <>
@@ -52,8 +55,8 @@ const BlogsByCategory = ({ blogs, titlesData }) => {
         <div className="section-center">
           <Header titlesData={titlesData} />
           <main>
-            <FeaturedArticles blogs={blogs?.slice(0, 3)} />
-            <AllArticles blogs={blogs?.slice(3)} />
+            <FeaturedArticles blogs={featuredBlogs} />
+            <AllArticles blogs={nonFeaturedBlogs} />
           </main>
         </div>
       </Container>
@@ -89,6 +92,7 @@ export const getStaticProps = async (context) => {
       blogs: data?.data,
       titlesData: titlesData?.data,
     },
+    revalidate: 1,
   };
 };
 

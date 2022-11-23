@@ -88,6 +88,7 @@ export const getStaticProps = async (context) => {
       featuredBlogs: featuredData?.data,
       recentBlogs: recentBlogsData?.data,
     },
+    revalidate: 1,
   };
 };
 
