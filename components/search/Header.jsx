@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <Container>
       <h1>
-        Results for : <span>{query.title}</span>
+        Results for : <span>{query?.s}</span>
       </h1>
     </Container>
   );

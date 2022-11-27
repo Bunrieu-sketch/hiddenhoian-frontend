@@ -20,9 +20,11 @@ const SearchPage = ({ blogs }) => {
     );
   }
 
+  console.log(query);
+
   return (
     <>
-      <HeadSeo title={`Search results for "${query?.title}"`} />
+      <HeadSeo title={`Search results for "${query?.s}"`} />
 
       <Container className="section">
         <div className="section-center">
@@ -38,8 +40,8 @@ export default SearchPage;
 
 export const Container = styled.section``;
 
-export const getStaticProps = async (context) => {
-  const { title } = context?.params;
+export const getServerSideProps = async (context) => {
+  const title = context?.query?.s;
 
   // page data
   const res = await fetch(
@@ -51,21 +53,5 @@ export const getStaticProps = async (context) => {
     props: {
       blogs: data?.data,
     },
-    revalidate: 1,
-  };
-};
-
-export const getStaticPaths = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs`);
-  const data = await res.json();
-  const blogs = data?.data;
-  const titles = blogs?.map((blog) => blog?.attributes?.title);
-  const paths = titles?.map((title) => ({
-    params: { title },
-  }));
-
-  return {
-    paths,
-    fallback: true,
   };
 };

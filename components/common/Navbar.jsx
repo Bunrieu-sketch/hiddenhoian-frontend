@@ -23,7 +23,7 @@ const Navbar = ({ toggleSidebar }) => {
 
   const onSearch = (e) => {
     e.preventDefault();
-    router.push(`/search/${searchTerm}`);
+    router.push(`/search?s=${searchTerm}`, undefined, { shallow: true });
     setShowSearch(false);
     setSearchTerm('');
   };
