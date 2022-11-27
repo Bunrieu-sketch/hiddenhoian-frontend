@@ -20,8 +20,6 @@ const SearchPage = ({ blogs }) => {
     );
   }
 
-  console.log(query);
-
   return (
     <>
       <HeadSeo title={`Search results for "${query?.s}"`} />
