@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import Scrollspy from 'react-scrollspy';
 
@@ -40,6 +40,7 @@ const About = ({ aboutTitle, aboutText }) => {
       text: 'maps',
     },
   ];
+
   const [scrolled, setScrolled] = useState(false);
   const isBrowser = () => typeof window !== 'undefined';
 

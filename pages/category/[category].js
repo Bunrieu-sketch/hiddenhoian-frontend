@@ -6,9 +6,10 @@ import {
   AllArticles,
   FeaturedArticles,
   Header,
+  OtherCategories,
 } from '../../components/blogsByCategory';
 
-const BlogsByCategory = ({ blogs, titlesData }) => {
+const BlogsByCategory = ({ blogs, titlesData, categories }) => {
   const { query, isFallback } = useRouter();
 
   const featuredBlogs = blogs?.filter((blog) => blog?.attributes?.featured);
@@ -57,6 +58,7 @@ const BlogsByCategory = ({ blogs, titlesData }) => {
           <main>
             <FeaturedArticles blogs={featuredBlogs} />
             <AllArticles blogs={nonFeaturedBlogs} />
+            <OtherCategories categories={categories} />
           </main>
         </div>
       </Container>
@@ -87,10 +89,24 @@ export const getStaticProps = async (context) => {
   );
   const titlesData = await titlesRes.json();
 
+  // other categories
+  const categoriesRes = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/blogs?sort=createdAt:desc&pagination[limit]=100&fields[0]=category`
+  );
+  const categoriesData = await categoriesRes.json();
+  const categories = [
+    ...new Set(categoriesData?.data?.map((blog) => blog?.attributes?.category)),
+  ]
+    .map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value)
+    .slice(0, 3);
+
   return {
     props: {
       blogs: data?.data,
       titlesData: titlesData?.data,
+      categories,
     },
     revalidate: 1,
   };
