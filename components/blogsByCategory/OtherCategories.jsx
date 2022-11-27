@@ -66,6 +66,7 @@ const OtherCategories = ({ categories }) => {
                         href={`/${slugify(blog?.attributes.category, {
                           lower: true,
                         })}/${blog?.attributes.slug}`}
+                        key={blog?.id}
                       >
                         <a className="blog">
                           <Image
